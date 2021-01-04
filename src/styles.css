@@ -6,7 +6,7 @@ div.container {
   background-image: linear-gradient(175deg, #13547a 0%, #80d0c7 80%);
   opacity: 1;
   margin: 0 auto;
-  margin-top: 5%;
+  margin-top: 3%;
   max-width: 600px;
   padding: 22px;
   padding-top: 30px;
@@ -16,43 +16,43 @@ div.actual-city {
   margin: 0 auto;
   padding: 1%;
   color: white;
+  line-height: 1.5;
 }
 div.row.actual-city {
   background-color: rgba(217, 249, 244, 0.2);
   border-radius: 5px;
-  margin-bottom: 0;
-  height: 10em;
-  position: relative;
+  text-align: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
-div.col-6.actual-city {
-  display: flex;
-  align-items: center;
+div.col-6.weather-description {
+  text-align: left;
+  font-size: 10px;
+  padding-left: 15px;
 }
-i.fa-snowflake {
-  font-size: 50px;
-}
-div.col-6.actual-date {
-  display: flex;
-  align-items: center;
+span#description {
+  text-align: center;
+  display: block;
+  font-weight: bold;
 }
 p {
   margin: 0 auto;
-  vertical-align: middle;
-  text-align: center;
+}
+i.fa-snowflake {
+  font-size: 70px;
+  font-style: normal;
+  margin-top: 10px;
 }
 span.actual-date {
   font-size: 20px;
-  line-height: 1.5;
-  margin: 0 auto;
 }
 span.actual-temperature {
-  font-size: 30px;
-  line-height: 1.5;
+  font-size: 25px;
 }
 span.units {
-  font-size: 15px;
+  font-size: 12px;
   position: relative;
-  top: -10px;
+  top: -8px;
 }
 table.next-5-hours {
   border-collapse: separate;
@@ -82,11 +82,10 @@ div.row.forecast {
   align-items: center;
   position: relative;
   font-size: 15px;
-  padding: 15px 0;
+  padding: 20px 0;
 }
 i.fa-cloud-sun-rain {
   font-size: 15px;
-  margin-right: 5%;
 }
 img {
   width: 98%;
@@ -94,14 +93,14 @@ img {
   padding: 20px;
   display: block;
   margin: 0 auto;
-  border-radius: 4px 4px 0 0;
+  border-radius: 5px 5px 0 0;
 }
 table.sun-position-time {
   border-spacing: 0;
   background-color: rgba(217, 249, 244, 0.2);
   width: 98%;
   margin: 0 auto;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 5px 5px;
 }
 thead.sun-position-time {
   vertical-align: middle;
@@ -137,8 +136,7 @@ th.sun-position-time {
 }
 #required-city {
   font-weight: bold;
-  font-size: 27px;
-  line-height: 2;
+  font-size: 25px;
 }
 #fahrenheit {
   color: white;
@@ -152,7 +150,7 @@ th.sun-position-time {
   border-radius: 4px;
   background-color: rgba(217, 249, 244, 0.2);
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 .all-page {
   margin: 15px 0;

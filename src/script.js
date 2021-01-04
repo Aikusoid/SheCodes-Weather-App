@@ -27,9 +27,10 @@ function formatTime(date) {
 }
 
 function displayWeather(response){
+  console.log(response.data);
   let celsiusTemp = Math.round(response.data.main.temp);
   let fahrenheitTemp = Math.round(celsiusTemp*1.8+32);
-  cityName.innerHTML = response.data.name;
+  cityName.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   actualTemperature.innerHTML = Math.round(celsiusTemp);
   fahrenheitUnit.addEventListener("click",function (event) {
     event.preventDefault();

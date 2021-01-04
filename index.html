@@ -34,14 +34,13 @@
       <div class="row all-page">
         <div class="col actual-city">
           <div class="row actual-city">
-            <div class="col-6 actual-city">
-              <p>
-                <span class="city" id="required-city"></span>
-                <br />
-                <i class="far fa-snowflake">⛅</i>
-              </p>
+            <div class="col-12 actual-city">
+              <span id="required-city"></span>
             </div>
-            <div class="col-6 actual-date">
+            <div class="col-6 actual-city" id="current-weather-icon">
+              <p><i class="far fa-snowflake">⛅</i></p>
+            </div>
+            <div class="col-6 actual-city actual-date">
               <p>
                 <span class="actual-date"></span>
                 <br />
@@ -55,33 +54,50 @@
                 <span class="current-time"></span>
               </p>
             </div>
+            <div class="col-6 actual-city weather-description">
+              <p>
+                <span id="description">Rain</span>
+                Feels like: <span id="feels-like"></span>
+                <br />
+                Humidity: <span id="humidity"></span>
+              </p>
+            </div>
+            <div class="col-6 actual-city weather-description">
+              <p>
+                Wind: <span id="wind"></span>
+                <br />
+                Wind direction: <span id="wind-direction"></span>
+                <br />
+                Presure: <span id="presure"></span>
+              </p>
+            </div>
           </div>
           <div class="col-12">
             <table class="next-5-hours">
               <thead class="next-5-hours">
                 <tr class="next-5-hours">
                   <th class="next-5-hours">
-                    07:00
+                    <span class="1-hour">07:00</span>
                     <br />
                     ⛅
                   </th>
                   <th class="next-5-hours">
-                    08:00
+                    <span class="2-hour">08:00</span>
                     <br />
                     ⛅
                   </th>
                   <th class="next-5-hours">
-                    09:00
+                    <span class="3-hour">09:00</span>
                     <br />
                     ⛅
                   </th>
                   <th class="next-5-hours">
-                    10:00
+                    <span class="4-hour">10:00</span>
                     <br />
                     ⛅
                   </th>
                   <th class="next-5-hours">
-                    11:00
+                    <span class="5-hour">11:00</span>
                     <br />
                     ⛅
                   </th>
@@ -89,11 +105,11 @@
               </thead>
               <tbody>
                 <tr class="temperature">
-                  <td class="temperature">4°C</td>
-                  <td class="temperature">5°C</td>
-                  <td class="temperature">5°C</td>
-                  <td class="temperature">6°C</td>
-                  <td class="temperature">7°C</td>
+                  <td class="temperature 1-hour">4°C</td>
+                  <td class="temperature 2-hour">5°C</td>
+                  <td class="temperature 3-hour">5°C</td>
+                  <td class="temperature 4-hour">6°C</td>
+                  <td class="temperature 5-hour">7°C</td>
                 </tr>
               </tbody>
             </table>
