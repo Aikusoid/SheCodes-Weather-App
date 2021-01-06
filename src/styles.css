@@ -54,12 +54,12 @@ span.units.convert {
   position: relative;
   top: -8px;
 }
-table.next-5-hours {
+table.next-15-hours {
   border-collapse: separate;
   border-spacing: 4px;
   margin: 9px 0 0;
 }
-th.next-5-hours,
+th.next-15-hours,
 td.temperature {
   width: 10em;
   background-color: rgba(217, 249, 244, 0.2);

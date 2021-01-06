@@ -77,6 +77,22 @@ function displayWeather(response) {
         response.data.main.temp
       );
     });
+
+  getForecast(response.data.coord.lat, response.data.coord.lon);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+  document.querySelector("span.time.after-3-hours").innerHTML = formatTime(
+    response.data.list[0].dt
+  );
+}
+
+function getForecast(lat, lon) {
+  let apiKey = "b81cb38c0b17e133191f4fac4a0b3833";
+  let units = "metric";
+  let endPointForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(endPointForecast).then(displayForecast);
 }
 
 function currentLocation(position) {
@@ -100,6 +116,7 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   searchCity(document.querySelector("#city-input").value);
+  getForecast(document.querySelector("#city-input").value);
 }
 
 // Current Date & Time calls
