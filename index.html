@@ -15,6 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/22ebd7e744.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
@@ -38,14 +42,16 @@
               <span id="required-city"></span>
             </div>
             <div class="col-6 actual-city" id="current-weather-icon">
-              <p><i class="far fa-snowflake">⛅</i></p>
+              <p>
+                <img class="weather-icon" id="current-icon-description" />
+              </p>
             </div>
             <div class="col-6 actual-city actual-date">
               <p>
                 <span class="actual-date"></span>
                 <br />
                 <span class="actual-temperature"></span>
-                <span class="units"
+                <span class="units convert"
                   ><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit"
                     >°F</a
                   ></span
@@ -58,17 +64,22 @@
               <p>
                 <span id="description">Rain</span>
                 Feels like: <span id="feels-like"></span>
+                <span class="units">°C</span>
                 <br />
                 Humidity: <span id="humidity"></span>
+                <span class="units">%</span>
               </p>
             </div>
             <div class="col-6 actual-city weather-description">
               <p>
-                Wind: <span id="wind"></span>
+                Wind speed: <span id="wind-speed"></span>
+                <span class="units">m/sec</span>
                 <br />
                 Wind direction: <span id="wind-direction"></span>
+                <span class="units">°</span>
                 <br />
-                Presure: <span id="presure"></span>
+                Pressure: <span id="pressure"></span>
+                <span class="units">hPa</span>
               </p>
             </div>
           </div>
@@ -169,7 +180,11 @@
         </div>
       </div>
       <div class="sun-position">
-        <img src="img/sunrise-sunset.png" alt="sun-position" />
+        <img
+          class="sun-position"
+          src="img/sunrise-sunset.png"
+          alt="sun-position"
+        />
         <table class="sun-position-time">
           <thead class="sun-position-time">
             <tr>

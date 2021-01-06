@@ -38,7 +38,7 @@ span#description {
 p {
   margin: 0 auto;
 }
-i.fa-snowflake {
+i.weather-icon {
   font-size: 70px;
   font-style: normal;
   margin-top: 10px;
@@ -49,7 +49,7 @@ span.actual-date {
 span.actual-temperature {
   font-size: 25px;
 }
-span.units {
+span.units.convert {
   font-size: 12px;
   position: relative;
   top: -8px;
@@ -87,7 +87,7 @@ div.row.forecast {
 i.fa-cloud-sun-rain {
   font-size: 15px;
 }
-img {
+img.sun-position {
   width: 98%;
   background-color: rgba(217, 249, 244, 0.2);
   padding: 20px;
@@ -145,6 +145,10 @@ th.sun-position-time {
 #celsius {
   color: white;
   text-decoration: none;
+}
+#current-icon-description {
+  width: 70%;
+  margin: 0 auto;
 }
 .days {
   border-radius: 4px;
