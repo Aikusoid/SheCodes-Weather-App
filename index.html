@@ -35,22 +35,22 @@
         <input type="submit" value="Search" id="search-submit" />
       </form>
       <button id="current-location">Current</button>
-      <div class="row all-page">
-        <div class="col actual-city">
-          <div class="row actual-city">
-            <div class="col-12 actual-city">
+      <div class="row weather-forecast-info">
+        <div class="col today">
+          <div class="row today">
+            <div class="col-12">
               <span id="required-city"></span>
             </div>
-            <div class="col-6 actual-city" id="current-weather-icon">
+            <div class="col-6 current-city">
               <p>
                 <img class="weather-icon" id="current-icon-description" />
               </p>
             </div>
-            <div class="col-6 actual-city actual-date">
+            <div class="col-6 current-city current-date">
               <p>
-                <span class="actual-date"></span>
+                <span class="current-date"></span>
                 <br />
-                <span class="actual-temperature"></span>
+                <span class="current-temperature"></span>
                 <span class="units convert"
                   ><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit"
                     >°F</a
@@ -60,9 +60,9 @@
                 <span class="current-time"></span>
               </p>
             </div>
-            <div class="col-6 actual-city weather-description">
+            <div class="col-6 current-city weather-description">
               <p>
-                <span id="description">Rain</span>
+                <span id="description"></span>
                 Feels like: <span id="feels-like"></span>
                 <span class="units">°C</span>
                 <br />
@@ -70,7 +70,7 @@
                 <span class="units">%</span>
               </p>
             </div>
-            <div class="col-6 actual-city weather-description">
+            <div class="col-6 current-city weather-description">
               <p>
                 Wind speed: <span id="wind-speed"></span>
                 <span class="units">m/sec</span>
@@ -83,119 +83,136 @@
               </p>
             </div>
           </div>
-          <div class="col-12 next-15-hours">
-            <table class="forecast-next-15-hours">
-              <thead class="forecast-next-15-hours">
-                <tr class="forecast-next-15-hours">
-                  <th class="forecast-next-15-hours">
-                    <span class="next-15-hours time"></span>
+          <div class="col-12">
+            <table class="hourly-forecast">
+              <thead class="hourly-forecast">
+                <tr class="hourly-forecast">
+                  <th class="hourly-forecast-data">
+                    <span class="hourly-forecast-time"></span>
                     <br />
-                    ⛅
+                    <img class="hourly-forecast-icon" />
                   </th>
-                  <th class="forecast-next-15-hours">
-                    <span class="next-15-hours time"></span>
+                  <th class="hourly-forecast-data">
+                    <span class="hourly-forecast-time"></span>
                     <br />
-                    ⛅
+                    <img class="hourly-forecast-icon" />
                   </th>
-                  <th class="forecast-next-15-hours">
-                    <span class="next-15-hours time"></span>
+                  <th class="hourly-forecast-data">
+                    <span class="hourly-forecast-time"></span>
                     <br />
-                    ⛅
+                    <img class="hourly-forecast-icon" />
                   </th>
-                  <th class="forecast-next-15-hours">
-                    <span class="next-15-hours time"></span>
+                  <th class="hourly-forecast-data">
+                    <span class="hourly-forecast-time"></span>
                     <br />
-                    ⛅
+                    <img class="hourly-forecast-icon" />
                   </th>
-                  <th class="forecast-next-15-hours">
-                    <span class="next-15-hours time"></span>
+                  <th class="hourly-forecast-data">
+                    <span class="hourly-forecast-time"></span>
                     <br />
-                    ⛅
+                    <img class="hourly-forecast-icon" />
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="forecast-next-15-hours-temperature">
-                  <td class="forecast-next-15-hours-temperature"><span class="next-15-hours temperature"></span> °C</td>
-                  <td class="forecast-next-15-hours-temperature"><span class="next-15-hours temperature"></span> °C</td>
-                  <td class="forecast-next-15-hours-temperature"><span class="next-15-hours temperature"></span> °C</td>
-                  <td class="forecast-next-15-hours-temperature"><span class="next-15-hours temperature"></span> °C</td>
-                  <td class="forecast-next-15-hours-temperature"><span class="next-15-hours temperature"></span> °C</td>
+                <tr class="hourly-forecast">
+                  <td class="hourly-forecast-data">
+                    <span class="hourly-forecast-temp"></span>
+                    °C
+                  </td>
+                  <td class="hourly-forecast-data">
+                    <span class="hourly-forecast-temp"></span> °C
+                  </td>
+                  <td class="hourly-forecast-data">
+                    <span class="hourly-forecast-temp"></span> °C
+                  </td>
+                  <td class="hourly-forecast-data">
+                    <span class="hourly-forecast-temp"></span> °C
+                  </td>
+                  <td class="hourly-forecast-data">
+                    <span class="hourly-forecast-temp"></span> °C
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class="col forecast">
+        <div class="col daily-forecast">
           <div class="days">
-            <div class="row forecast">
-              <div class="col date">10/11/2020</div>
+            <div class="row daily-forecast">
+              <div class="col forecast-date"></div>
               <div class="col date-weather">
                 <p class="temperature-value">
-                  <i class="fas fa-cloud-sun-rain">🌤 / 🌩</i> 5°C / -1°C
+                  <img class="daily-forecast-icon" />
+                  <br>
+                  <span class="temp_max"></span>°C / <span class="temp_min"></span>°C
                 </p>
               </div>
             </div>
           </div>
           <div class="days">
-            <div class="row forecast">
-              <div class="col date">11/11/2020</div>
+            <div class="row daily-forecast">
+              <div class="col forecast-date"></div>
               <div class="col date-weather">
                 <p class="temperature-value">
-                  <i class="fas fa-cloud-sun-rain">🌤 / 🌩</i> 5°C / -1°C
+                  <img class="daily-forecast-icon" />
+                  <br>
+                  <span class="temp_max"></span>°C / <span class="temp_min"></span>°C
                 </p>
               </div>
             </div>
           </div>
           <div class="days">
-            <div class="row forecast">
-              <div class="col date">12/11/2020</div>
+            <div class="row daily-forecast">
+              <div class="col forecast-date"></div>
               <div class="col date-weather">
                 <p class="temperature-value">
-                  <i class="fas fa-cloud-sun-rain">🌤 / 🌩</i> 5°C / -1°C
+                  <img class="daily-forecast-icon" />
+                  <br>
+                  <span class="temp_max"></span>°C / <span class="temp_min"></span>°C
                 </p>
               </div>
             </div>
           </div>
           <div class="days">
-            <div class="row forecast">
-              <div class="col date">13/11/2020</div>
+            <div class="row daily-forecast">
+              <div class="col forecast-date"></div>
               <div class="col date-weather">
                 <p class="temperature-value">
-                  <i class="fas fa-cloud-sun-rain">🌤 / 🌩</i> 5°C / -1°C
+                  <img class="daily-forecast-icon" />
+                  <br>
+                  <span class="temp_max"></span>°C / <span class="temp_min"></span>°C
                 </p>
               </div>
             </div>
           </div>
           <div class="days">
-            <div class="row forecast">
-              <div class="col date">14/11/2020</div>
+            <div class="row daily-forecast">
+              <div class="col forecast-date"></div>
               <div class="col date-weather">
                 <p class="temperature-value">
-                  <i class="fas fa-cloud-sun-rain">🌤 / 🌩</i> 5°C / -1°C
+                  <img class="daily-forecast-icon" />
+                  <br>
+                  <span class="temp_max"></span>°C / <span class="temp_min"></span>°C
                 </p>
               </div>
             </div>
           </div>
-        </div>
       </div>
-      <div class="sun-position">
-        <img
-          class="sun-position"
-          src="img/sunrise-sunset.png"
-          alt="sun-position"
-        />
-        <table class="sun-position-time">
-          <thead class="sun-position-time">
-            <tr>
-              <th class="sun-position-time" id="sunrise">06:54</th>
-              <th class="sun-position-time">09:54</th>
-              <th class="sun-position-time">12:54</th>
-              <th class="sun-position-time">15:54</th>
-              <th class="sun-position-time" id="sunset">18:22</th>
-            </tr>
-          </thead>
-        </table>
+      <div class="row sun-position">
+        <div class="col-12 sun-img">
+          <img
+            class="sun-position"
+            src="img/sunrise-sunset.png"
+            alt="sun-position"
+          />
+        </div>
+        <div class="col-6 sunrise">
+          <span id="sunrise-time">08:00</span>
+        </div>
+        <div class="col-6 sundown">
+            <span id="sundown-time">18:00</span>
+        </div>
       </div>
     </div>
     <script src="src/script.js"></script>

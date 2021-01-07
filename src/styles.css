@@ -12,13 +12,13 @@ div.container {
 	padding-top: 30px;
 	border-radius: 10px;
 }
-div.actual-city {
+div.today {
 	margin: 0 auto;
 	padding: 1%;
 	color: white;
 	line-height: 1.5;
 }
-div.row.actual-city {
+div.row.today {
 	background-color: rgba(217, 249, 244, 0.2);
 	border-radius: 5px;
 	text-align: center;
@@ -38,15 +38,11 @@ span#description {
 p {
 	margin: 0 auto;
 }
-i.weather-icon {
-	font-size: 70px;
-	font-style: normal;
-	margin-top: 10px;
-}
-span.actual-date {
+
+span.current-date {
 	font-size: 20px;
 }
-span.actual-temperature {
+span.current-temperature {
 	font-size: 25px;
 }
 span.units.convert {
@@ -54,63 +50,67 @@ span.units.convert {
 	position: relative;
 	top: -8px;
 }
-table.forecast-next-15-hours {
+table.hourly-forecast {
 	border-collapse: separate;
-	border-spacing: 4px;
-	margin: 9px 0 0;
+	border-spacing: 2px;
+	margin: 5px 0 0 ;
+	width: 100%;
 }
-th.forecast-next-15-hours,
-td.forecast-next-15-hours-temperature {
+th.hourly-forecast-data,
+td.hourly-forecast-data {
 	width: 10em;
 	background-color: rgba(217, 249, 244, 0.2);
 	border-radius: 4px;
 }
-th {
+th.hourly-forecast-data {
 	height: 5.5em;
 	line-height: 2.5;
 }
-td {
+td.hourly-forecast-data {
 	height: 2.3em;
 }
-div.forecast {
+div.daily-forecast {
 	margin: 0 auto;
 	padding: 1%;
 	color: white;
 }
-div.row.forecast {
+div.row.daily-forecast {
 	display: flex;
 	align-items: center;
 	position: relative;
 	font-size: 15px;
-	padding: 20px 0;
+	padding: 15px 0;
 }
-i.fa-cloud-sun-rain {
+div.row.sun-position {
 	font-size: 15px;
+	padding: 1%;
+	margin: 0 auto;
+}
+div.col-12.sun-img {
+	padding: 1%;
+	background-color: rgba(217, 249, 244, 0.2);
+	border-radius: 5px 5px 0 0;
+	width:100%;
 }
 img.sun-position {
-	width: 98%;
-	background-color: rgba(217, 249, 244, 0.2);
+	width: 100%;
 	padding: 20px;
 	display: block;
 	margin: 0 auto;
-	border-radius: 5px 5px 0 0;
 }
-table.sun-position-time {
-	border-spacing: 0;
+div.col-6.sunrise{
+	text-align: left;
+	padding-left: 25px;
+	padding-bottom: 15px;
 	background-color: rgba(217, 249, 244, 0.2);
-	width: 98%;
-	margin: 0 auto;
-	border-radius: 0 0 5px 5px;
+	border-radius: 0 0 0 5px;
 }
-thead.sun-position-time {
-	vertical-align: middle;
-	margin: 0 auto;
-}
-th.sun-position-time {
-	border: none;
-	text-align: center;
-	line-height: 2.5;
-	height: auto;
+div.col-6.sundown{
+	text-align: right;
+	padding-right: 25px;
+	padding-bottom: 15px;
+	background-color: rgba(217, 249, 244, 0.2);
+	border-radius: 0 0 5px 0;
 }
 #search-city {
 	display: inline;
@@ -154,9 +154,9 @@ th.sun-position-time {
 	border-radius: 4px;
 	background-color: rgba(217, 249, 244, 0.2);
 	position: relative;
-	margin-bottom: 11px;
+	margin-bottom: 5px;
 }
-.all-page {
+.weather-forecast-info {
 	margin: 15px 0;
 	margin-bottom: 5px;
 	text-align: center;

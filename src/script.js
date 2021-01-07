@@ -1,3 +1,7 @@
+// Variables
+let currentBtn = document.querySelector("#current-location");
+let searchForm = document.querySelector("#search-city");
+
 // Format date / time functions
 function formatDate(date) {
 	let currentDate = date.getDate();
@@ -22,90 +26,112 @@ function formatTime(date) {
 	return `${hours}:${minutes}`;
 }
 
-function displayWeather(response) {
-	document.querySelector(
-		"#required-city"
-	).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+// Weather functions
+function displayWeather(apiCallParams) {
+	let apiKey = `b81cb38c0b17e133191f4fac4a0b3833`;
+	let forecast = `forecast`;
+	let currentWeather = `weather`;
+	axios
+		.get(
+			`https://api.openweathermap.org/data/2.5/${currentWeather}?${apiCallParams}&appid=${apiKey}&units=metric`
+		)
+		.then(function (response) {
+			document.querySelector("#required-city").innerHTML = response.data.name;
 
-	document.querySelector("span.actual-temperature").innerHTML = Math.round(
-		response.data.main.temp
-	);
-
-	document.querySelector("#description").innerHTML =
-		response.data.weather[0].description;
-
-	document.querySelector("#feels-like").innerHTML = Math.round(
-		response.data.main.feels_like
-	);
-
-	document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-
-	document.querySelector("#wind-speed").innerHTML = Math.round(
-		response.data.wind.speed
-	);
-
-	document.querySelector("#wind-direction").innerHTML = response.data.wind.deg;
-
-	document.querySelector("#pressure").innerHTML = response.data.main.pressure;
-
-	document
-		.querySelector("#current-icon-description")
-		.setAttribute(
-			"src",
-			"http://openweathermap.org/img/w/" +
-				response.data.weather[0].icon +
-				".png"
-		);
-	document
-		.querySelector("#fahrenheit")
-		.addEventListener("click", function (event) {
-			event.preventDefault();
-			document.querySelector("span.actual-temperature").innerHTML = Math.round(
-				response.data.main.temp * 1.8 + 32
-			);
-		});
-
-	document
-		.querySelector("#celsius")
-		.addEventListener("click", function (event) {
-			event.preventDefault();
-			document.querySelector("span.actual-temperature").innerHTML = Math.round(
+			document.querySelector("span.current-temperature").innerHTML = Math.round(
 				response.data.main.temp
 			);
+
+			document.querySelector("#description").innerHTML =
+				response.data.weather[0].description;
+
+			document.querySelector("#feels-like").innerHTML = Math.round(
+				response.data.main.feels_like
+			);
+
+			document.querySelector("#humidity").innerHTML =
+				response.data.main.humidity;
+
+			document.querySelector("#wind-speed").innerHTML = Math.round(
+				response.data.wind.speed
+			);
+
+			document.querySelector("#wind-direction").innerHTML =
+				response.data.wind.deg;
+
+			document.querySelector("#pressure").innerHTML =
+				response.data.main.pressure;
+
+			document
+				.querySelector("#current-icon-description")
+				.setAttribute(
+					`src`,
+					`http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`
+				);
+
+			document
+				.querySelector("#fahrenheit")
+				.addEventListener("click", function (event) {
+					event.preventDefault();
+					document.querySelector(
+						"span.current-temperature"
+					).innerHTML = Math.round(response.data.main.temp * 1.8 + 32);
+				});
+
+			document
+				.querySelector("#celsius")
+				.addEventListener("click", function (event) {
+					event.preventDefault();
+					document.querySelector(
+						"span.current-temperature"
+					).innerHTML = Math.round(response.data.main.temp);
+				});
+		});
+
+	axios
+		.get(
+			`https://api.openweathermap.org/data/2.5/${forecast}?${apiCallParams}&appid=${apiKey}&units=metric`
+		)
+		.then(function (response) {
+			console.log(response.data);
+			document
+				.querySelectorAll(".hourly-forecast-data")
+				.forEach(function (element, index) {
+					let nextHours = new Date(response.data.list[index].dt_txt);
+					element.querySelector(".hourly-forecast-time").innerHTML = formatTime(
+						nextHours
+					);
+					element.querySelector(".hourly-forecast-temp").innerHTML = Math.round(
+						response.data.list[index].main.temp
+					);
+					element
+						.querySelector(".hourly-forecast-icon")
+						.setAttribute(
+							`src`,
+							`http://openweathermap.org/img/w/${response.data.list[index].weather[0].icon}.png`
+						);
+				});
 		});
 }
-
-function currentLocation(position) {
-	let apiKey = "b81cb38c0b17e133191f4fac4a0b3833";
-	let units = "metric";
-	let endPointCoords = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
-	axios.get(endPointCoords).then(displayWeather);
-}
-
-function getCurrentLocation() {
-	navigator.geolocation.getCurrentPosition(currentLocation);
-}
-
-function searchCity(city) {
-	let apiKey = "b81cb38c0b17e133191f4fac4a0b3833";
-	let units = "metric";
-	let endPointCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-	axios.get(endPointCity).then(displayWeather);
-}
-
-function handleSubmit(event) {
-	event.preventDefault();
-	searchCity(document.querySelector("#city-input").value);
-}
-
 // Current Date & Time calls
 let now = new Date();
-document.querySelector("span.actual-date").innerHTML = formatDate(now);
+document.querySelector("span.current-date").innerHTML = formatDate(now);
 document.querySelector("span.current-time").innerHTML = formatTime(now);
 
-// Weather in current location & searched city $ default city calls
-document
-	.querySelector("#current-location")
-	.addEventListener("click", getCurrentLocation);
-document.querySelector("#search-city").addEventListener("submit", handleSubmit);
-searchCity("Prague");
+// Weather functions calls
+
+currentBtn.addEventListener("click", function (event) {
+	event.preventDefault();
+	navigator.geolocation.getCurrentPosition(function (position) {
+		displayWeather(
+			`lat=${position.coords.latitude}&lon=${position.coords.longitude}`
+		);
+	});
+});
+
+searchForm.addEventListener("submit", function (event) {
+	event.preventDefault();
+	displayWeather(`q=${searchForm.querySelector("#city-input").value}`);
+});
+
+displayWeather("q=Prague");
