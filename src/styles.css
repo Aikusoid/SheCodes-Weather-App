@@ -43,14 +43,12 @@ span#description {
 p {
   margin: 0 auto;
 }
-div.current-date {
-  padding-top: 12px;
-}
+
 span.current-date {
-  font-size: 15px;
+  font-size: 20px;
 }
 span.current-temperature {
-  font-size: 30px;
+  font-size: 25px;
 }
 span.units.convert {
   font-size: 12px;
