@@ -58,7 +58,7 @@ span.units.convert {
 table.hourly-forecast {
   border-collapse: separate;
   border-spacing: 3px;
-  margin: 5px 0 0;
+  margin: 8px 0 0;
   width: 100%;
 }
 th.hourly-forecast-data,
