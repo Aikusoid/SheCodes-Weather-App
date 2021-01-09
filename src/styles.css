@@ -7,18 +7,19 @@ div.container {
   opacity: 1;
   margin: 0 auto;
   margin-top: 3%;
+  width: 80%;
   max-width: 600px;
   padding: 22px;
   padding-top: 30px;
   border-radius: 10px;
 }
-div.actual-city {
+div.today {
   margin: 0 auto;
   padding: 1%;
   color: white;
   line-height: 1.5;
 }
-div.row.actual-city {
+div.row.today {
   background-color: rgba(217, 249, 244, 0.2);
   border-radius: 5px;
   text-align: center;
@@ -27,95 +28,105 @@ div.row.actual-city {
 }
 div.col-6.weather-description {
   text-align: left;
-  font-size: 10px;
-  padding-left: 15px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+div.col-6.pressure-wind.weather-description {
+  padding-left: 1px;
 }
 span#description {
   text-align: center;
   display: block;
   font-weight: bold;
+  font-size: 15px;
 }
 p {
   margin: 0 auto;
 }
-i.fa-snowflake {
-  font-size: 70px;
-  font-style: normal;
-  margin-top: 10px;
+div.current-date {
+  padding-top: 12px;
 }
-span.actual-date {
-  font-size: 20px;
+span.current-date {
+  font-size: 15px;
 }
-span.actual-temperature {
-  font-size: 25px;
+span.current-temperature {
+  font-size: 30px;
 }
-span.units {
+span.units.convert {
   font-size: 12px;
   position: relative;
   top: -8px;
 }
-table.next-5-hours {
+table.hourly-forecast {
   border-collapse: separate;
-  border-spacing: 4px;
-  margin: 9px 0 0;
+  border-spacing: 3px;
+  margin: 5px 0 0;
+  width: 100%;
 }
-th.next-5-hours,
-td.temperature {
-  width: 10em;
+th.hourly-forecast-data,
+td.hourly-forecast-data-temp {
+  width: 20%;
   background-color: rgba(217, 249, 244, 0.2);
   border-radius: 4px;
 }
-th {
+th.hourly-forecast-data {
   height: 5.5em;
   line-height: 2.5;
 }
-td {
-  height: 2.3em;
+td.hourly-forecast-data-temp {
+  height: 2.6em;
 }
-div.forecast {
+div.daily-forecast {
   margin: 0 auto;
   padding: 1%;
   color: white;
 }
-div.row.forecast {
+div.row.daily-forecast {
   display: flex;
   align-items: center;
   position: relative;
   font-size: 15px;
-  padding: 20px 0;
+  padding: 4px 0;
 }
-i.fa-cloud-sun-rain {
+div.forecast-date {
+  text-align: left;
+  padding-left: 30px;
+}
+div.row.sun-position {
   font-size: 15px;
+  padding: 1%;
+  margin: 0 auto;
 }
-img {
-  width: 98%;
+div.col-12.sun-img {
+  padding: 1%;
   background-color: rgba(217, 249, 244, 0.2);
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+}
+img.sun-position {
+  width: 100%;
   padding: 20px;
   display: block;
   margin: 0 auto;
-  border-radius: 5px 5px 0 0;
 }
-table.sun-position-time {
-  border-spacing: 0;
+div.col-6.sunrise {
+  text-align: left;
+  padding-left: 25px;
+  padding-bottom: 15px;
   background-color: rgba(217, 249, 244, 0.2);
-  width: 98%;
-  margin: 0 auto;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 0 5px;
 }
-thead.sun-position-time {
-  vertical-align: middle;
-  margin: 0 auto;
-}
-th.sun-position-time {
-  border: none;
-  text-align: center;
-  line-height: 2.5;
-  height: auto;
+div.col-6.sunset {
+  text-align: right;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  background-color: rgba(217, 249, 244, 0.2);
+  border-radius: 0 0 5px 0;
 }
 #search-city {
   display: inline;
   margin-top: 10px;
-  padding: 7px;
+  padding: 2%;
 }
 #city-input {
   border-radius: 4px;
@@ -123,14 +134,15 @@ th.sun-position-time {
 }
 #search-submit {
   border-radius: 4px;
-  width: 129px;
+  margin-top: 10px;
+  width: 22%;
   margin-left: 6px;
   background: rgba(217, 249, 244, 0.3);
   color: #ffffff;
 }
 #current-location {
   border-radius: 4px;
-  width: 129px;
+  width: 22%;
   background: rgba(217, 249, 244, 0.3);
   color: #ffffff;
 }
@@ -146,13 +158,18 @@ th.sun-position-time {
   color: white;
   text-decoration: none;
 }
+#current-icon-description {
+  width: 70%;
+  margin: 0 auto;
+}
 .days {
   border-radius: 4px;
   background-color: rgba(217, 249, 244, 0.2);
   position: relative;
-  margin-bottom: 11px;
+  margin-bottom: 7px;
+  height: 63px;
 }
-.all-page {
+.weather-forecast-info {
   margin: 15px 0;
   margin-bottom: 5px;
   text-align: center;
@@ -160,4 +177,7 @@ th.sun-position-time {
 .temperature-value {
   margin: 0 auto;
   font-size: 12px;
+}
+.daily-forecast-icon {
+  width: 30px;
 }
