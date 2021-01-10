@@ -86,6 +86,7 @@ function getCity(geoCallParams) {
 		document.querySelector("#required-city").innerHTML = `${response.data[0].name}, ${response.data[0].country}`;
 	});
 	axios.get(`${root}${geoDirect}${geoCallParams}&limit=1&appid=${apiKey}`).then(function (response) {
+		document.querySelector("#required-city").innerHTML = `${response.data[0].name}, ${response.data[0].country}`
 		displayWeather(`lat=${response.data[0].lat}&lon=${response.data[0].lon}`);
 	});
 }
@@ -116,7 +117,6 @@ currentBtn.addEventListener("click", function (event) {
 
 searchForm.addEventListener("submit", function (event) {
 	event.preventDefault();
-	document.querySelector("#required-city").innerHTML = document.querySelector("#city-input").value.toUpperCase();
 	getCity(`q=${document.querySelector("#city-input").value}`);
 });
 
