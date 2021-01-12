@@ -54,10 +54,20 @@ span.current-temperature {
   font-size: 30px;
   font-weight: bold;
 }
+a#celsius,
+a#fahrenheit {
+  color: white;
+}
 span.units.convert {
-  font-size: 20px;
+  font-size: 18px;
   position: relative;
   top: -8px;
+  color: white;
+}
+span.convert .active {
+  color: white;
+  text-decoration: none;
+  cursor: default;
 }
 table.hourly-forecast {
   border-collapse: separate;
@@ -134,7 +144,10 @@ footer {
 }
 a.source {
   text-decoration: none;
-  color: rgb(1, 68, 131);
+  color: rgb(10, 90, 165);
+}
+a.source:hover {
+  text-decoration: underline;
 }
 #search-city {
   display: inline;
@@ -145,7 +158,7 @@ a.source {
 #city-input {
   border-radius: 4px;
   margin-left: 10px;
-  max-width: 180px;
+  max-width: 175px;
   display: inline;
 }
 #search-submit {
@@ -155,31 +168,35 @@ a.source {
   height: 33px;
   background: rgba(217, 249, 244, 0.3);
   color: #ffffff;
+  border: none;
+}
+#search-submit:hover {
+  background: rgba(217, 249, 244, 0.5);
+  transition: all 200ms ease-in-out;
 }
 #current-location {
   border-radius: 4px;
   width: 22%;
   height: 33px;
-  margin-left: 5px;
+  margin-left: 9px;
   background: rgba(217, 249, 244, 0.3);
   color: #ffffff;
+  border: none;
+}
+#current-location:hover {
+  background: rgba(217, 249, 244, 0.5);
+  transition: all 200ms ease-in-out;
 }
 #required-city {
   font-weight: bold;
   font-size: 25px;
 }
-#fahrenheit {
-  color: rgb(112, 231, 225);
-  text-decoration: none;
-}
-#celsius {
-  color: rgb(112, 231, 225);
-  text-decoration: none;
-}
+
 #current-icon-description {
   width: 70%;
   margin: 0 auto;
 }
+
 .days {
   border-radius: 4px;
   background-color: rgba(217, 249, 244, 0.2);

@@ -46,10 +46,14 @@ function displayWeather(apiCallParams) {
 			document.querySelector("#current-icon-description").setAttribute(`src`,`http://openweathermap.org/img/w/${response.data.current.weather[0].icon}.png`);
 			document.querySelector("#fahrenheit").addEventListener("click", function (event) {
 					event.preventDefault();
+					document.querySelector("#celsius").classList.remove("active");
+					document.querySelector("#fahrenheit").classList.add("active");
 					document.querySelector("span.current-temperature").innerHTML = Math.round(response.data.current.temp * 1.8 + 32);
 				});
 			document.querySelector("#celsius").addEventListener("click", function (event) {
 					event.preventDefault();
+					document.querySelector("#fahrenheit").classList.remove("active");
+					document.querySelector("#celsius").classList.add("active");
 					document.querySelector("span.current-temperature").innerHTML = Math.round(response.data.current.temp);
 				});
 
