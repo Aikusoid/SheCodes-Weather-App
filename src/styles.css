@@ -6,7 +6,7 @@ div.weather-app {
   background-image: linear-gradient(175deg, #13547a 0%, #80d0c7 80%);
   opacity: 1;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 5%;
   width: 90%;
   max-width: 600px;
   padding: 22px;
