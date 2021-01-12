@@ -99,7 +99,7 @@ let apiKey = `b81cb38c0b17e133191f4fac4a0b3833`;
 let oneCall = `data/2.5/onecall?`;
 let geoDirect = `geo/1.0/direct?`;
 let geoReverse = `geo/1.0/reverse?`;
-let root = `http://api.openweathermap.org/`;
+let root = `https://api.openweathermap.org/`;
 let units = `metric`;
 
 // Functions calls
