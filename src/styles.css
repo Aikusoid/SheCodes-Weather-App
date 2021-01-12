@@ -3,7 +3,7 @@ body {
   color: white;
 }
 div.weather-app {
-  background-image: linear-gradient(175deg, #13547a 0%, #80d0c7 80%);
+  background-image: linear-gradient(175deg, #023655 0%, #8adad0 90%);
   opacity: 1;
   margin: 0 auto;
   margin-top: 5%;
@@ -40,18 +40,22 @@ span#description {
   font-weight: bold;
   font-size: 14px;
 }
+span#description:first-letter {
+  text-transform: capitalize;
+}
 p {
   margin: 0 auto;
 }
 
 span.current-date {
-  font-size: 20px;
+  font-size: 16px;
 }
 span.current-temperature {
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
 }
 span.units.convert {
-  font-size: 12px;
+  font-size: 20px;
   position: relative;
   top: -8px;
 }
@@ -130,28 +134,33 @@ footer {
 }
 a.source {
   text-decoration: none;
-  color: black;
+  color: rgb(1, 68, 131);
 }
 #search-city {
   display: inline;
   margin-top: 10px;
   padding: 2%;
+  padding-right: 0;
 }
 #city-input {
   border-radius: 4px;
-  max-width: 183px;
+  margin-left: 10px;
+  max-width: 180px;
+  display: inline;
 }
 #search-submit {
   border-radius: 4px;
-  margin-top: 10px;
   width: 22%;
   margin-left: 6px;
+  height: 33px;
   background: rgba(217, 249, 244, 0.3);
   color: #ffffff;
 }
 #current-location {
   border-radius: 4px;
   width: 22%;
+  height: 33px;
+  margin-left: 5px;
   background: rgba(217, 249, 244, 0.3);
   color: #ffffff;
 }
@@ -160,11 +169,11 @@ a.source {
   font-size: 25px;
 }
 #fahrenheit {
-  color: white;
+  color: rgb(112, 231, 225);
   text-decoration: none;
 }
 #celsius {
-  color: white;
+  color: rgb(112, 231, 225);
   text-decoration: none;
 }
 #current-icon-description {

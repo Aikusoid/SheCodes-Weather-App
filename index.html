@@ -28,14 +28,15 @@
         <label for="city" id="weather-in"> Weather in </label>
         <input
           type="search"
+          class="form-control form-control-sm"
           placeholder="Enter city"
           id="city-input"
           autocomplete="on"
           autofocus="on"
         />
-        <input type="submit" value="Search" id="search-submit" />
+        <input type="submit" class="btn btn-primary btn-sm" value="Search" id="search-submit" />
       </form>
-      <button id="current-location">Current</button>
+      <button type="button" class="btn btn-primary btn-sm" id="current-location">Current</button>
       <div class="row weather-forecast-info">
         <div class="col today">
           <div class="row today">
@@ -53,12 +54,7 @@
               <p>
                 <span class="current-date"></span>
                 <br />
-                <span class="current-temperature"></span>
-                <span class="units convert"
-                  ><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit"
-                    >°F</a
-                  ></span
-                >
+                <span class="current-temperature"></span><span class="units convert"><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit">°F</a></span>
                 <br />
                 <span class="current-time"></span>
               </p>
